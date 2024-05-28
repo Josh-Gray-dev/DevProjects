@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Projects</title>
+  <script>
+    function loadScript(url) {
+      const script = document.createElement('script');
+      script.src = url;
+      document.body.appendChild(script);
+    }
+
+    function handleOptionChange(event) {
+  const selectedOption = event.target.value;
+  if (selectedOption === 'option1') {
+    window.location.href = './maze/maze.html';
+  } else if (selectedOption === 'option2') {
+    loadScript('option2.js');
+  } else if (selectedOption === 'option3') {
+    window.location.href = 'marvel.html';
+  }
+}
+
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">GrayDev<b>.</b></div>
+        <ul class="navItems">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>View A Project</h1>
+    <label for="options">Select:</label>
+    <select id="options" name="options" onchange="handleOptionChange(event)">
+      <option value="" selected disabled>  project</option>
+      <option value="option1">Maze Game</option>
+      <!--<option value="option2">Option 2</option>-->
+      <option value="option3">Marvel Capstone</option>
+    </select>
+  </main>
+</body>
+</html>
